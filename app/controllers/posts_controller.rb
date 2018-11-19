@@ -1,3 +1,5 @@
+require "pry"
+
 class PostsController < ApplicationController
 
   before_action :set_post, only: [:show]
@@ -6,15 +8,18 @@ class PostsController < ApplicationController
     end
 
     def new
-      # @post = Post.new
+      @post = Post.new
     end
 
     def create
       @post = Post.new(post_params)
+      @post.user_id = current_user.id
+      binding.pry
       if @post.save
         redirect_to @post, notice: "Your post was created successfully"
       else
-          render :new
+        p "failure"
+        render :new
       end
     end
 
