@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'navigate' do
 
   before do
-    user = User.create(email: "test100@test.com", password: "chicken", password_confirmation: "chicken", first_name: "Jon", last_name: "Snow")
+    user = User.create(email: "test1@test.com", password: "chicken", password_confirmation: "chicken", first_name: "Jon", last_name: "Snow")
     login_as(user, :scope => :user)
     visit new_post_path
   end
@@ -25,7 +25,7 @@ describe 'navigate' do
   describe "creation" do
 
     before do
-      user = User.create(email: "test@test.com", password: "chicken", password_confirmation: "chicken", first_name: "Jon", last_name: "Snow")
+      user = User.create(email: "test2@test.com", password: "chicken", password_confirmation: "chicken", first_name: "Jon", last_name: "Snow")
       login_as(user, :scope => :user)
       visit new_post_path
     end
