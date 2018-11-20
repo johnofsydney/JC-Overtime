@@ -1,0 +1,32 @@
+<div class="logo">
+  <h1>Logo</h1>
+</div>
+
+<ul class="custom-nav nav nav-pills">
+  <li class="nav-item active">
+    <%= link_to "Home", root_path %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Time Entries", posts_path %>
+  </li>
+
+
+  <li class="nav-item dropdown ml-md-auto">
+     <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Account</a>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+
+      <ul>
+        <li><%= link_to "Edit Details", edit_user_registration_path %> </li>
+
+        <li><a class="dropdown-item" href="#">Another action</a> </li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+       <!-- <a class="dropdown-item" href="#">Action</a>
+       <a class="dropdown-item" href="#">Another action</a>
+       <a class="dropdown-item" href="#">Something else here</a> -->
+      <div class="dropdown-divider"></div>
+      <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+
+    </div>
+  </li>
+</ul>
